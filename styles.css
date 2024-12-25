@@ -1,0 +1,317 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+}
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #121212;
+}
+
+.welcome-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #121212;
+    color: #ffffff;
+    text-align: center;
+}
+.welcome-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+.welcome-content p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.personal-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+
+.quick-access {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+.quick-access ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.quick-access ul li {
+    margin: 15px 0;
+}
+.quick-access ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+.quick-access ul li a:hover {
+    color: #ff5722;
+}
+
+.bg-darkish {
+    background-color: #1e1e1e;
+    transition: background-color 0.5s;
+}
+body.light-mode .bg-darkish {
+    background-color: #ffffff;
+}
+.text-light {
+    color: #e0e0e0 !important;
+}
+body.light-mode .text-light {
+    color: #121212 !important;
+}
+.text-dark {
+    color: #212529 !important;
+}
+.text-muted {
+    color: #a0a0a0 !important;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+.timeline::before {
+    content: '';
+    background: #343a40;
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background 0.5s;
+}
+body.light-mode .timeline::before {
+    background: #cccccc;
+}
+.timeline li {
+    margin: 20px 0;
+    position: relative;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.timeline li::before {
+    content: '';
+    background: #ff5722;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+    transition: background 0.5s;
+}
+body.light-mode .timeline li::before {
+    background: #ff9800;
+}
+.timeline li p {
+    color: #e0e0e0;
+}
+body.light-mode .timeline li p {
+    color: #121212;
+}
+@media (max-width: 767px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline li {
+        padding-left: 30px;
+    }
+    .timeline li::before {
+        left: 20px;
+    }
+}
+
+.project-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+body.light-mode .project-card {
+    background-color: #ffffff;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+body.light-mode .project-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.project-image {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+.project-description {
+    height: 80px;
+    overflow: hidden;
+}
+.project-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: auto;
+}
+.project-footer .badge {
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+#contact ul {
+    padding: 0;
+}
+#contact li {
+    list-style: none;
+}
+#contact a {
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+#contact a:hover {
+    color: #ff5722;
+}
+#contact p {
+    margin-top: 10px;
+    color: #a0a0a0;
+}
+#contact .d-flex {
+    background-color: #2c2c2c;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+body.light-mode #contact .d-flex {
+    background-color: #f0f0f0;
+}
+#contact .d-flex:hover {
+    background-color: #3a3a3a;
+}
+body.light-mode #contact .d-flex:hover {
+    background-color: #e0e0e0;
+}
+#contact .d-flex p {
+    margin: 0;
+    font-size: 1rem;
+    color: #a0a0a0;
+}
+body.light-mode #contact .d-flex p {
+    color: #555555;
+}
+
+footer {
+    background-color: #1e1e1e;
+    transition: background-color 0.5s;
+}
+body.light-mode footer {
+    background-color: #f5f5f5;
+}
+footer a {
+    color: #e0e0e0;
+    transition: color 0.3s;
+}
+body.light-mode footer a {
+    color: #121212;
+}
+footer a:hover {
+    color: #ff5722;
+}
+body.light-mode footer a:hover {
+    color: #ff9800;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 99;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+body.light-mode #scrollToTop {
+    background-color: #ff5722;
+    color: #ffffff;
+}
+#scrollToTop:hover {
+    background-color: #e64a19;
+    color: #ffffff;
+}
+body.light-mode #scrollToTop:hover {
+    background-color: #e65100;
+    color: #ffffff;
+}
+
+/* New Styles for Projects Section */
+#projects .card {
+    background-color: transparent;
+    border: none;
+}
+#projects .card-body {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 10px 10px;
+    transition: background-color 0.3s;
+}
+body.light-mode #projects .card-body {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#projects .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+#projects .project-description {
+    flex-grow: 1;
+}
+#projects .btn-outline-primary {
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+#projects .btn-outline-primary:hover {
+    background-color: #ff5722;
+    color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
